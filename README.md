@@ -5,14 +5,12 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 <!-- REPLACE -->
-<!-- [TITLE] -->
-<!-- [FOLDER] -->
-<!-- [GITHUB REPO] -->
+
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <a href="https://github.com/[GITHUB REPO]">
+    <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia">
         <img src="images/logo.png" alt="Logo" width="80" height="80">
     </a>
     <h3 align="center">[TITLE]</h3>
@@ -22,17 +20,17 @@
     <br />
     <!-- PROJECT SCREENSHOTS -->
     <!--
-    <a href="https://github.com/[GITHUB REPO]/blob/main/images/screenshot01.png">
+    <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/blob/main/images/screenshot01.png">
         <img src="images/screenshot01.png" alt="screenshot" width="120" height="120">
     </a>
     -->
     <br />
-    <a href="https://github.com/[GITHUB REPO]"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/[GITHUB REPO]/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/[GITHUB REPO]/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
 
   </p>
 </div>
@@ -43,27 +41,31 @@
 
 # Getting Started
 
-This is an example of how you may give instructions on setting up your project locally. To get a local copy up and
-running follow these simple example steps.
+Quiz Engine for Trivia module
+
+Easy to create a quiz game by using this module.
 
 ## Prerequisites
 
 You have python 3 installed.
 
-## Installation
+## Use
 
 In a terminal do following
 
-```console
-mkdir [FOLDER]
-curl -L https://api.github.com/repos/[GITHUB REPO]/tarball | tar -xz --strip-components=3 -C [FOLDER]
-```
+```python
+from TriviaQuizEngine-TirsvadCLI import QuizEngine
 
-For run the application go to the folder [FOLDER] and run.
+quiz = QuizEngine()
 
-```commandline
-cd [FOLDER]
-python main.py
+while quiz.still_has_questions():
+    print(f"Your score : {quiz.score}")
+    q_text = quiz.next_question()
+    user_answer = input(f"Q.{quiz.question_number}: {q_text}")
+    if quiz.check_answer(user_answer):
+        print("You are right")
+    else:
+        print("You are wrong")
 ```
 
 ## Contributing
@@ -95,25 +97,25 @@ git push origin feature
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/[GITHUB REPO]?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
 
-[contributors-url]: https://github.com/[GITHUB REPO]/graphs/contributors
+[contributors-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/[GITHUB REPO]?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
 
-[forks-url]: https://github.com/[GITHUB REPO]/network/members
+[forks-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/[GITHUB REPO]?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
 
-[stars-url]: https://github.com/[GITHUB REPO]/stargazers
+[stars-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/[GITHUB REPO]?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
 
-[issues-url]: https://github.com/[GITHUB REPO]/issues
+[issues-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/issues
 
-[license-shield]: https://img.shields.io/github/license/[GITHUB REPO]?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
 
-[license-url]: https://github.com/[GITHUB REPO]/blob/master/LICENSE.txt
+[license-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/blob/master/LICENSE.txt
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
