@@ -13,7 +13,7 @@
     <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia">
         <img src="images/logo.png" alt="Logo" width="80" height="80">
     </a>
-    <h3 align="center">[TITLE]</h3>
+    <h3 align="center">Quiz Engine for Trivia</h3>
     <p align="center">
     <!-- PROJECT DESCRIPTION -->
     <br />
@@ -35,7 +35,7 @@
   </p>
 </div>
 
-# [TITLE]
+# Quiz Engine for Trivia
 
 <!-- PROJECT DESCRIPTION -->
 
