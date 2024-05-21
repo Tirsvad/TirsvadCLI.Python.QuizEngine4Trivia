@@ -1,6 +1,6 @@
 import requests
 
-from Models.trivia_api_model import TriviaApiModel
+from QuizEngine4Trivia.Models.trivia_api_model import TriviaApiModel
 
 
 class TriviaDataModel:

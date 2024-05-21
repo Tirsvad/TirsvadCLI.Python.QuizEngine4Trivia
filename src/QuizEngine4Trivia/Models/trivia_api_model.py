@@ -1,4 +1,3 @@
-
 class TriviaApiModel:
     trivia_dict: dict = {}
     # trivia_encode: str | None  # Not in use
@@ -88,4 +87,3 @@ class TriviaApiModel:
             if self.trivia_dict[k] is not None:
                 key = k.split('_')[1]
                 self.url_params.update({key: self.trivia_dict[k]})
-

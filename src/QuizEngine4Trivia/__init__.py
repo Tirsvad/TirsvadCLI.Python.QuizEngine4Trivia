@@ -1,6 +1,7 @@
 import html
 
-from Models.trivia_data_model import TriviaDataModel, TriviaApiModel
+from QuizEngine4Trivia.Models.trivia_data_model import TriviaDataModel
+from QuizEngine4Trivia.Models.trivia_api_model import TriviaApiModel
 
 
 class QuizEngine:
