@@ -11,7 +11,7 @@
 <br />
 <div align="center">
     <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/">
-        <img src="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/blob/main/images/logo.png" alt="Logo" width="80" height="80">
+        <img src="images/logo.png" alt="Logo" width="80" height="80">
     </a>
     <h3 align="center">Quiz Engine for Trivia</h3>
     <p align="center">
@@ -56,9 +56,8 @@ In a terminal do following
 pip install tirsvadCLI-quiz_engine_4_trivia
 ```
 
-
 ```python
-from quiz_engine import QuizEngine
+from main import QuizEngine
 
 quiz = QuizEngine()
 
