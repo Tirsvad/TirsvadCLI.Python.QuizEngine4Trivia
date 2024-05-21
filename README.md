@@ -10,8 +10,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia">
-        <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/">
+        <img src="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/blob/main/images/logo.png" alt="Logo" width="80" height="80">
     </a>
     <h3 align="center">Quiz Engine for Trivia</h3>
     <p align="center">
@@ -52,9 +52,13 @@ You have python 3 installed.
 ## Use
 
 In a terminal do following
+```commandline
+pip install tirsvadCLI-quiz_engine_4_trivia
+```
+
 
 ```python
-from TriviaQuizEngine-TirsvadCLI import QuizEngine
+from quiz_engine import QuizEngine
 
 quiz = QuizEngine()
 
