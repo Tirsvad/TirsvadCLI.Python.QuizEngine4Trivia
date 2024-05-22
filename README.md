@@ -4,12 +4,13 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-<!-- REPLACE -->
-
-
+<a href='https://coveralls.io/github/TirsvadCLI/Python.QuizEngine4Trivia'>
+    <img src='https://coveralls.io/repos/github/TirsvadCLI/Python.QuizEngine4Trivia/badge.svg' alt='Coverage Status' height="28"/>
+</a>
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+    <br />
     <a href="https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/">
         <img src="images/logo.png" alt="Logo" width="80" height="80">
     </a>
@@ -109,17 +110,17 @@ git push origin feature
 [forks-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/network/members
 
 [stars-shield]: https://img.shields.io/github/stars/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
-
 [stars-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/stargazers
 
 [issues-shield]: https://img.shields.io/github/issues/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
-
 [issues-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/issues
 
 [license-shield]: https://img.shields.io/github/license/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
-
 [license-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/blob/master/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-
 [linkedin-url]: https://www.linkedin.com/in/jens-tirsvad-nielsen-13b795b9/
+
+
+[coveralls-shield]: https://coveralls.io/repos/github/TirsvadCLI/Python.QuizEngine4Trivia/badge.svg?branch=main
+[coverall-url]: https://coveralls.io/github/TirsvadCLI/Python.QuizEngine4Trivia?branch=main
