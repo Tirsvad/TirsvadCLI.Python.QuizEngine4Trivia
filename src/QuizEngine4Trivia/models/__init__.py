@@ -1,3 +1,10 @@
+class QuestionModel:
+
+    def __init__(self, q_text, q_answer):
+        self.text = q_text
+        self.answer = q_answer
+
+
 class TriviaApiModel:
     trivia_dict: dict = {}
     # trivia_encode: str | None  # Not in use
@@ -87,3 +94,16 @@ class TriviaApiModel:
             if self.trivia_dict[k] is not None:
                 key = k.split('_')[1]
                 self.url_params.update({key: self.trivia_dict[k]})
+
+
+class TriviaDataModel:
+    data: list[dict] = []
+
+    def __init__(self, data: list[dict]) -> None:
+        """
+        Trivia data model. Holds all the requested data from the key ['results'] in TriviaDataModel.data field
+
+        :param data: list[dict]
+        """
+
+        self.data = data

@@ -1,7 +1,8 @@
 import html
+import requests
 
-from QuizEngine4Trivia.Models.trivia_data_model import TriviaDataModel
-from QuizEngine4Trivia.Models.trivia_api_model import TriviaApiModel
+from QuizEngine4Trivia.models import TriviaDataModel
+from QuizEngine4Trivia.models import TriviaApiModel
 
 
 class QuizEngine:
@@ -12,13 +13,14 @@ class QuizEngine:
     score: int = 0
     current_question: dict = {}
 
-
     def __init__(self) -> None:
         """
         QuestionEngine fetch question from trivia api
         """
         self.api = TriviaApiModel()
-        self.trivial_data_model = TriviaDataModel(self.api)
+        response = requests.get(url=self.api.url, params=self.api.url_params)
+        response.raise_for_status()
+        self.trivial_data_model = TriviaDataModel(response.json()['results'])
 
     def still_has_questions(self):
         """
