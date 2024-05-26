@@ -1,8 +1,14 @@
-class QuestionModel:
+from dataclasses import dataclass
 
-    def __init__(self, q_text, q_answer):
-        self.text = q_text
-        self.answer = q_answer
+
+@dataclass
+class TriviaQuestionModel:
+    type: str
+    difficulty: str
+    category: str
+    question: str
+    correct_answer: str
+    incorrect_answers: list[str]
 
 
 class TriviaApiModel:
@@ -61,49 +67,40 @@ class TriviaApiModel:
             trivia_amount: int = 10,
             trivia_difficulty: str | None = None,
             trivia_category: int | None = None,
-            # trivia_type: str ='boolean',  # Not in use
+            trivia_type: str | None = None,
             # encode=None # Not in use
     ) -> None:
         """
 
-        :param trivia_amount:
+        :param trivia_amount: int between 0 and 101
         :param trivia_difficulty:
         :param trivia_category:
         """
-
-        trivia_type = "boolean"
-
+        locals_vars = locals()
+        locals_vars.pop('self')
         # Validate params
         if trivia_difficulty is not None and trivia_difficulty not in self.trivia_difficulty_dict.values():
             raise ValueError(f"trivia_difficulty value is wrong")
         if trivia_category is not None and trivia_category not in self.trivia_category_dict.values():
             raise ValueError(f"trivia_category value is wrong")
-        if trivia_type is not None and trivia_type not in self.trivia_type_dict.values():
+        if trivia_amount is not None and (trivia_amount <= 0 or trivia_amount > 100):
+            raise ValueError(f"trivia_amount value is wrong")
+        if trivia_type not in ["boolean", "multiple"] and trivia_type is not None:
             raise ValueError(f"trivia_type value is wrong")
-
-        self.trivia_dict.update({'trivia_amount': trivia_amount})
-        self.trivia_dict.update({'trivia_difficulty': trivia_difficulty})
-        self.trivia_dict.update({'trivia_category': trivia_category})
-        self.trivia_dict.update({'trivia_type': trivia_type})
-
-        self._create_api_url()
-
-    def _create_api_url(self) -> None:
-        self.url_params = {}
-        for k in self.trivia_dict.keys():
-            if self.trivia_dict[k] is not None:
-                key = k.split('_')[1]
-                self.url_params.update({key: self.trivia_dict[k]})
+        key: str
+        for key, value in locals_vars.items():
+            if value is not None:
+                self.url_params.update({key.split('_')[1]: value})
 
 
 class TriviaDataModel:
-    data: list[dict] = []
+    data: list[TriviaQuestionModel] = []
 
-    def __init__(self, data: list[dict]) -> None:
-        """
-        Trivia data model. Holds all the requested data from the key ['results'] in TriviaDataModel.data field
+    def from_json(self, question_list):
+        for question in question_list:
+            self.data.append(TriviaQuestionModel(**question))
 
-        :param data: list[dict]
-        """
 
-        self.data = data
+class CurrentQuestionModel:
+    question: str = ""
+    possible_answers: list = []

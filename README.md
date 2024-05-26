@@ -4,9 +4,13 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-<a href='https://coveralls.io/github/TirsvadCLI/Python.QuizEngine4Trivia'>
-    <img src='https://coveralls.io/repos/github/TirsvadCLI/Python.QuizEngine4Trivia/badge.svg' alt='Coverage Status' height="28"/>
-</a>
+
+[![PyPi][pypi-shield]][pypi-url]
+[![Coveralls][coveralls-shield]][coverall-url]
+![PyPiPythonVer][pypipyver-shield]
+
+
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -58,18 +62,30 @@ pip install tirsvadCLI-quiz_engine_4_trivia
 ```
 
 ```python
-from main import QuizEngine
+from QuizEngine4Trivia import QuizEngine
+import html
 
 quiz = QuizEngine()
 
 while quiz.still_has_questions():
-    print(f"Your score : {quiz.score}")
-    q_text = quiz.next_question()
-    user_answer = input(f"Q.{quiz.question_number}: {q_text}")
-    if quiz.check_answer(user_answer):
-        print("You are right")
-    else:
-        print("You are wrong")
+    print(f"Your score : {quiz.score}\n\n")
+    current = quiz.next_question()
+    print({html.unescape(current.question)})
+
+    count = 0
+    for possible_answer in current.possible_answers:
+        print(f"{count}: {html.unescape(possible_answer)}")
+        count += 1
+
+    user_answer = int(input("Answer .:"))
+    if 0 <= user_answer <= count:
+        if quiz.check_answer(current.possible_answers[user_answer]):
+            print("You are right")
+        else:
+            print("You are wrong")
+
+print("You've completed the quiz")
+print(f"Your final score was: {quiz.score}/{quiz.question_number}")
 ```
 
 ## Contributing
@@ -102,11 +118,9 @@ git push origin feature
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
-
 [contributors-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/graphs/contributors
 
 [forks-shield]: https://img.shields.io/github/forks/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
-
 [forks-url]: https://github.com/TirsvadCLI/Python.QuizEngine4Trivia/network/members
 
 [stars-shield]: https://img.shields.io/github/stars/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
@@ -121,6 +135,10 @@ git push origin feature
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/jens-tirsvad-nielsen-13b795b9/
 
+[coveralls-shield]: https://img.shields.io/coverallsCoverage/github/TirsvadCLI/Python.QuizEngine4Trivia?style=for-the-badge
+[coverall-url]: https://coveralls.io/github/TirsvadCLI/Python.QuizEngine4Trivia
 
-[coveralls-shield]: https://coveralls.io/repos/github/TirsvadCLI/Python.QuizEngine4Trivia/badge.svg?branch=main
-[coverall-url]: https://coveralls.io/github/TirsvadCLI/Python.QuizEngine4Trivia?branch=main
+[pypi-shield]: https://img.shields.io/pypi/v/QuizEngine4Trivia-TirsvadCLI?style=for-the-badge
+[pypi-url]: https://pypi.org/project/QuizEngine4Trivia-TirsvadCLI/
+
+[pypipyver-shield]: https://img.shields.io/pypi/pyversions/QuizEngine4Trivia-TirsvadCLI?style=for-the-badge
