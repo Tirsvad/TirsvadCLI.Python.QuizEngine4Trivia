@@ -1,0 +1,127 @@
+// 20240525210804
+// https: // opentdb.com / api.php?amount = 10 & type = multiple
+{
+  "response_code": 0,
+  "results": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "History",
+      "question": "Abolitionist John Brown raided the arsenal in which Virginia Town?",
+      "correct_answer": "Harper&#039;s Ferry",
+      "incorrect_answers": [
+        "Richmond",
+        "Harrisonburg",
+        "Martinsburg"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Music",
+      "question": "Who is the primary lyricist for Canadian progressive rock band Rush?",
+      "correct_answer": "Neil Peart",
+      "incorrect_answers": [
+        "Geddy Lee",
+        "Alex Lifeson",
+        "John Rutsey"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Music",
+      "question": "Who had a 1983 hit with the song &#039;Africa&#039;?",
+      "correct_answer": "Toto",
+      "incorrect_answers": [
+        "Foreigner",
+        "Steely Dan",
+        "Journey"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Comics",
+      "question": "Who was the inspiration for Cuthbert Calculus in the Tintin series?",
+      "correct_answer": "Auguste Picard",
+      "incorrect_answers": [
+        "Jacques Piccard",
+        "Will Morris",
+        "J. Cecil Maby"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "General Knowledge",
+      "question": "What is the first book of the Old Testament?",
+      "correct_answer": "Genesis",
+      "incorrect_answers": [
+        "Exodus",
+        "Leviticus",
+        "Numbers"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "category": "Entertainment: Japanese Anime &amp; Manga",
+      "question": "In the anime series &quot;Full Metal Alchemist&quot;, what do Alchemists consider the greatest taboo?",
+      "correct_answer": "Human Transmutation ",
+      "incorrect_answers": [
+        "Transmuting Lead Into Gold",
+        "Using Alchemy For Crime ",
+        "Preforming Without A Permit"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "category": "History",
+      "question": "How many women joined the United States Armed Services during World War II?",
+      "correct_answer": "350,000",
+      "incorrect_answers": [
+        "225,000",
+        "100,000",
+        "500,000"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Science &amp; Nature",
+      "question": "Who discovered the Law of Gravity?",
+      "correct_answer": "Sir Isaac Newton",
+      "incorrect_answers": [
+        "Galileo Galilei",
+        "Charles Darwin",
+        "Albert Einstein"
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Books",
+      "question": "What&#039;s Harry Potter&#039;s dad&#039;s name?",
+      "correct_answer": "James Potter",
+      "incorrect_answers": [
+        "Joey Potter",
+        "Frank Potter",
+        "Hairy Potter Sr."
+      ]
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "category": "Entertainment: Music",
+      "question": "Which of these is the name of a song by Tears for Fears?",
+      "correct_answer": "Shout",
+      "incorrect_answers": [
+        "Scream",
+        "Yell",
+        "Shriek"
+      ]
+    }
+  ]
+}
