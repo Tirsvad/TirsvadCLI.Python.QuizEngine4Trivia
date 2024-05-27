@@ -1,6 +1,6 @@
 [project]
 name='QuizEngine4Trivia-TirsvadCLI'
-version = "0.0.5"
+version = "0.0.6"
 description = "Question Engine for Trivia Queston DB"
 readme = "README.md"
 authors = [

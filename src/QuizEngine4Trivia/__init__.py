@@ -11,6 +11,8 @@ class QuizEngine:
     score: int = 0
     current_question: TriviaQuestionModel
 
+    track_answer: dict = {}
+
     def __init__(self) -> None:
         """
         QuestionEngine fetch question from trivia api
@@ -26,18 +28,19 @@ class QuizEngine:
         Is there still more question in the deck
         :return boolean:
         """
-        return self.question_number < len(self.trivia_data.data)
+        return self.question_number < len(self.trivia_data.questions)
 
     def next_question(self) -> CurrentQuestionModel:
         """
         Return the next question from deck
         :return str: question
         """
-        self.current_question = self.trivia_data.data[self.question_number]
+        self.current_question = self.trivia_data.questions[self.question_number]
         self.question_number += 1
         question = CurrentQuestionModel()
+        question.category = self.current_question.category
         question.question = f"Q.{self.question_number}: {self.current_question.question}:"
-        question.possible_answers = self.current_question.incorrect_answers
+        question.possible_answers = list(self.current_question.incorrect_answers)
         question.possible_answers.append(self.current_question.correct_answer)
         shuffle(question.possible_answers)
         return question
@@ -49,9 +52,31 @@ class QuizEngine:
         :param user_answer: str
         :return boolean: Return True if answer is correct
         """
-        correct_answer = self.current_question.correct_answer
-        if user_answer.lower() == correct_answer.lower():
+
+        if user_answer.lower() == self.current_question.correct_answer.lower():
             self.score += 1
+            self.track_answer.update({self.question_number - 1: [True, user_answer]})
             return True
         else:
+            self.track_answer.update({self.question_number - 1: [False, user_answer]})
             return False
+
+    def get_result(self) -> list[tuple[bool, str, str]]:
+        """
+        Get the result of your answers
+
+        :return list[tuple[bool, str, str]]:
+        """
+        result = []
+        for k, v in self.track_answer.items():
+            if v[0]:
+                result.append((
+                    True,
+                    f"Q.{k} answer was correct : {self.trivia_data.questions[int(k)].question}",
+                    f"{v[1]}"))
+            else:
+                result.append((
+                    False,
+                    f"Q.{k} answer was wrong : {self.trivia_data.questions[k].question}",
+                    f"your answer {v[1]}\ncorrect answer {self.trivia_data.questions[int(k)].correct_answer}"))
+        return result
