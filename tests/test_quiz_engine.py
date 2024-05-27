@@ -56,11 +56,24 @@ class TestQuizEngine(unittest.TestCase):
         self.assertTrue(self.app.check_answer(self.app.current_question.correct_answer))
 
     def test_still_has_questions_true(self):
-        length = len(self.app.trivia_data.data)
+        length = len(self.app.trivia_data.questions)
         self.app.question_number = 0
         self.assertTrue(self.app.still_has_questions())
 
     def test_still_has_questions_false(self):
-        length = len(self.app.trivia_data.data)
+        length = len(self.app.trivia_data.questions)
         self.app.question_number = length
         self.assertFalse(self.app.still_has_questions())
+
+    def test_get_result_return_type(self):
+        self.app.question_number = 0
+        self.app.next_question()
+        self.app.check_answer(self.app.current_question.incorrect_answers[0])
+        self.app.next_question()
+        self.app.check_answer(self.app.current_question.correct_answer)
+        result = self.app.get_result()
+        self.assertIs(type(result), list)
+        self.assertIs(type(result[0]), tuple)
+        self.assertIs(type(result[0][0]), bool)
+        self.assertIs(type(result[0][1]), str)
+        self.assertIs(type(result[0][2]), str)

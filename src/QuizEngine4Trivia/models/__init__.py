@@ -94,13 +94,15 @@ class TriviaApiModel:
 
 
 class TriviaDataModel:
-    data: list[TriviaQuestionModel] = []
+    questions: list[TriviaQuestionModel] = []
 
     def from_json(self, question_list):
         for question in question_list:
-            self.data.append(TriviaQuestionModel(**question))
+            self.questions.append(TriviaQuestionModel(**question))
+
 
 
 class CurrentQuestionModel:
+    category: str = ""
     question: str = ""
     possible_answers: list = []
